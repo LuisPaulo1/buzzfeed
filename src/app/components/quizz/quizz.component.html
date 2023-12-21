@@ -1,7 +1,7 @@
 <div class="quizz__container">
   <div class="quizz_logo">
     <img src="assets/imgs/logo.png" alt="" srcset="">
-    <h3>Titulo</h3>
+    <h3>{{ title }}</h3>
   </div>
 
   <div class="quizz_questions">
@@ -9,7 +9,9 @@
   </div>
 
   <div class="quizz_options">
-    <button class="btn-option">Optionname</button>
+    <button *ngFor="let option of questionSelected.options" (click)="playerChoose(option.alias)" class="btn-option">
+      {{ option.name }}
+    </button>
   </div>
 
   <div class="quizz_results">
